@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shiv M@tka</title>
+
+ <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1401397218238019');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1401397218238019&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #111111;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+    }
+
+    .page {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -1px;
+
+      margin-bottom: 30px;
+    }
+
+    .brand .shiv {
+      color: #ffffff;
+    }
+
+    .brand .matka {
+      display: block;
+      margin-top: 7px;
+      color: #ffd400;
+    }
+
+    .action-button {
+      display: inline-block;
+
+      padding: 15px 42px;
+
+      background: #ffd400;
+      color: #111111;
+
+      border-radius: 6px;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+    }
+
+    .action-button:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .action-button:active {
+      transform: translateY(0);
+    }
+
+    .disclaimer {
+      position: fixed;
+
+      left: 15px;
+      right: 15px;
+      bottom: 12px;
+
+      text-align: center;
+
+      color: #777777;
+
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+
+      .brand {
+        font-size: 42px;
+      }
+
+      .action-button {
+        padding: 14px 34px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+    <div class="brand">
+      <span class="shiv">Shiv</span>
+      <span class="matka">M@tka</span>
+    </div>
+
+    <a
+      href="#"
+      id="action-link"
+      class="action-button"
+    >
+      Learn More
+    </a>
+
+  </main>
+
+
+  <div class="disclaimer">
+    Informational and awareness content only.
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const btn = document.getElementById("action-link");
+
+      if (!btn) return;
+
+
+      btn.addEventListener("click", function (e) {
+
+        // Sirf real human click
+        if (!e.isTrusted) {
+          e.preventDefault();
+          return;
+        }
+
+
+        // Already tracked?
+        if (
+          localStorage.getItem("action_tracked") === "true"
+        ) {
+          return;
+        }
+
+
+        // Mark as tracked
+        localStorage.setItem(
+          "action_tracked",
+          "true"
+        );
+
+
+        // Unique event ID
+        const eventId =
+          "action_" + Date.now();
+
+
+        // Meta Pixel event
+        if (typeof fbq === "function") {
+
+          fbq(
+            "track",
+            "ViewContent",
+            {},
+            {
+              eventID: eventId
+            }
+          );
+
+        }
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
+```
